@@ -1,24 +1,12 @@
-import Navigation from './components/Navigation';
-import Hero from './components/Hero';
-import About from './components/About';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import './index.css';
+import Navbar from './components/Navbar.jsx';
+import Hero from './components/Hero.jsx';
+import Projects from './components/Projects.jsx';
+import About from './components/About.jsx';
+import Skills from './components/Skills.jsx';
+import Services from './components/Services.jsx';
+import Contact from './components/Contact.jsx';
+import Footer from './components/Footer.jsx';
 
-function App() {
-  return (
-    <main className="min-h-screen bg-white">
-      <Navigation />
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
-      <Footer />
-    </main>
-  );
+export default function App() {
+  return <><a className="skip-link" href="#main-content">Skip to content</a><Navbar/><main id="main-content"><Hero/><Projects/><About/><Skills/><Services/><Contact/></main><Footer/></>;
 }
-
-export default App;

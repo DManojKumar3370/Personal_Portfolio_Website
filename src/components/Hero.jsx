@@ -1,96 +1,22 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ArrowDown } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Database, SlidersHorizontal, ChartNoAxesCombined } from 'lucide-react';
 
-const Hero = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: 'easeOut' },
-    },
-  };
-
-  return (
-    <section className="min-h-screen pt-20 flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white relative overflow-hidden">
-      {/* Background parallax effect */}
-      <motion.div
-        className="absolute inset-0 opacity-20"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.2 }}
-        transition={{ duration: 2 }}
-      >
-        <div className="absolute top-0 left-0 w-96 h-96 bg-blue-600 rounded-full blur-3xl opacity-20 -translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-600 rounded-full blur-3xl opacity-20 translate-x-1/2 translate-y-1/2"></div>
-      </motion.div>
-
-      <motion.div
-        className="container mx-auto px-4 text-center z-10"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        <motion.div variants={itemVariants}>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Hi, I'm <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Your Name</span>
-          </h1>
-        </motion.div>
-
-        <motion.div variants={itemVariants}>
-          <p className="text-xl md:text-2xl text-gray-300 mb-4">
-            Full Stack Developer & Creative Designer
-          </p>
-        </motion.div>
-
-        <motion.div variants={itemVariants}>
-          <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
-            I craft beautiful, responsive web experiences with modern technologies and creative problem-solving.
-          </p>
-        </motion.div>
-
-        <motion.div
-          variants={itemVariants}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
-        >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="btn-primary"
-          >
-            View My Work
-          </motion.button>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="btn-secondary"
-          >
-            Download Resume
-          </motion.button>
-        </motion.div>
-      </motion.div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-      >
-        <ArrowDown size={32} className="text-blue-400" />
-      </motion.div>
-    </section>
-  );
-};
-
-export default Hero;
+export default function Hero() {
+  return <section className="hero container" id="home" aria-labelledby="hero-title">
+    <div className="hero-main">
+      <div className="hero-copy"><p className="eyebrow">DATA ANALYTICS & BUSINESS INTELLIGENCE</p><p className="hello">Hello, I'm</p>
+        <h1 id="hero-title">Manoj Kumar<span>.</span></h1>
+        <p className="hero-title">Data Analyst <span>| Power BI | SQL | Python | Excel</span></p>
+        <p className="hero-description">I transform raw data into clear dashboards, visualizations, and actionable insights using Power BI, Python, SQL, Excel, and Tableau.</p>
+        <div className="button-row"><a className="button" href="#projects">View Projects <ArrowRight size={18}/></a><a className="button button-secondary" href="#contact">Hire Me <ArrowUpRight size={18}/></a></div>
+        <p className="availability"><span aria-hidden="true"/>Available for freelance data analytics projects</p>
+      </div>
+      <aside className="hero-note" aria-label="My approach to data"><div className="note-top"><span>FROM DATA TO DECISIONS</span><span className="note-index">01 — 03</span></div><h2>A clearer view <br/>of your data.</h2>
+        <div className="approach-row"><span className="approach-icon"><Database size={21}/></span><div><strong>Organize the data</strong><p>Clean, structure, and prepare.</p></div><span className="step">01</span></div>
+        <div className="approach-row"><span className="approach-icon"><SlidersHorizontal size={21}/></span><div><strong>Explore the details</strong><p>Find patterns and relationships.</p></div><span className="step">02</span></div>
+        <div className="approach-row"><span className="approach-icon"><ChartNoAxesCombined size={21}/></span><div><strong>Make insights clear</strong><p>Build useful, readable dashboards.</p></div><span className="step">03</span></div>
+        <div className="note-bottom">A practical approach. A clear outcome.</div>
+      </aside>
+    </div>
+    <div className="tool-strip"><span className="tool-strip-label">MY ANALYTICS TOOLKIT</span><div>{['Power BI', 'SQL', 'Python', 'Excel', 'Tableau'].map((tool, i) => <span key={tool}><span className="tool-symbol" aria-hidden="true">{['▥', '⛁', '{ }', '▦', '✣'][i]}</span>{tool}</span>)}</div></div>
+  </section>;
+}
