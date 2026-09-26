@@ -28,7 +28,7 @@ export default function Navbar() {
     return () => { window.removeEventListener('scroll', updateActive); document.removeEventListener('keydown', dismiss); window.removeEventListener('resize', resize); };
   }, [open]);
   return <header className="site-header"><div className="container nav-shell">
-    <a className="brand" href="#home" onClick={() => setOpen(false)}><span className="brand-mark"><ChartNoAxesColumnIncreasing size={22} /></span>Manoj Kumar<span className="brand-dot">.</span></a>
+    <a className="brand" href="#home" onClick={() => setOpen(false)}><span className="brand-mark"><ChartNoAxesColumnIncreasing size={22} /></span>Manoj Kumar</a>
     <button className="menu-toggle" ref={toggle} aria-label={open ? 'Close navigation' : 'Open navigation'} aria-expanded={open} aria-controls="main-navigation" onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button>
     <nav id="main-navigation" className={open ? 'navigation is-open' : 'navigation'} aria-label="Main navigation">
       {links.map(label => <a key={label} href={`#${label.toLowerCase()}`} aria-current={active === label.toLowerCase() ? 'location' : undefined} onClick={() => setOpen(false)}>{label}</a>)}

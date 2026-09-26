@@ -26,3 +26,47 @@
   overflow-wrap: anywhere;
 }
 
+/* Freelance enquiries, using the existing portfolio palette and spacing. */
+.hero-fiverr{margin-top:14px}
+.service-delivery{margin-top:20px;padding-top:18px;border-top:1px solid var(--border)}
+.service-delivery strong{font-size:13px;color:var(--blue)}
+.service-delivery p{font-size:14px;color:var(--muted);line-height:1.8;margin:8px 0 0}
+.service-cta>div:first-child{flex:1;min-width:0}
+.service-cta .service-brief{font-size:14px;line-height:1.8;margin-top:8px;max-width:680px}
+.service-cta-actions{display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0}
+.project-enquiry{padding:20px;background:var(--pale);border:1px solid var(--border);border-radius:7px;margin:24px 0}
+.project-enquiry h3{font-size:18px;margin-bottom:10px}
+.project-enquiry p{font-size:14px;color:var(--muted);margin-bottom:12px}
+@media(max-width:600px){.service-cta-actions{align-items:flex-start;width:100%}.service-cta-actions .button{width:100%}}
+
+/* Freelance information follows the existing sections and visual language. */
+.fiverr-cta{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:26px 28px;margin-top:32px;border:1px solid var(--border);border-radius:7px;background:var(--pale)}
+.fiverr-cta>div{min-width:0;max-width:650px}
+.fiverr-cta h3{font-size:20px;margin-bottom:10px}
+.fiverr-cta p{font-size:14px;color:var(--muted);margin:0;line-height:1.8}
+.fiverr-cta>.button{flex-shrink:0}
+.work-principles,.workflow{margin-top:48px}
+.work-principles>h3,.workflow>h3{font-size:23px;margin-bottom:24px}
+.work-principles-grid,.workflow-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.work-principles-grid svg{color:var(--blue);margin-bottom:14px}
+.work-principles-grid h4,.workflow-steps h4{font-size:15px;line-height:1.6;margin:0 0 9px}
+.work-principles-grid p,.workflow-steps p{font-size:14px;color:var(--muted);margin:0;line-height:1.8}
+.workflow{border-top:1px solid var(--border);padding-top:36px}
+.workflow-steps{list-style:none;padding:0;margin-bottom:0}
+.workflow-number{display:grid;place-items:center;width:34px;height:34px;border-radius:6px;background:#edf1ff;color:var(--blue);font-size:12px;font-weight:800;margin-bottom:17px}
+.contact-group{display:grid;gap:11px;min-width:0}
+.contact-group+.contact-group{margin-top:20px}
+.contact-group h3{font-size:15px;letter-spacing:0;line-height:1.5;margin:0 0 2px}
+.contact-layout>div{min-width:0}
+.contact-section .fiverr-cta-contact{display:block;background:#1d2e47;border-color:#3f4e63;padding:22px;margin-top:26px}
+.contact-section .fiverr-cta-contact h3{font-size:19px;color:#fff}
+.contact-section .fiverr-cta-contact p{font-size:14px;color:#c1ccdc}
+.contact-section .fiverr-cta-contact .fiverr-note{font-size:12px;margin-top:10px}
+.fiverr-cta-contact>.button{margin-top:18px}
+.contact-section a:focus-visible{outline-color:#b6c6ff}
+.footer nav a{display:inline-flex;align-items:center;min-height:44px}
+.preview-automobile img{object-fit:contain}
+.project-figure img{height:auto}
+@media(max-width:1100px){.work-principles-grid,.workflow-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:800px){.fiverr-cta{align-items:flex-start;flex-direction:column;gap:20px}.service-cta{align-items:flex-start;flex-direction:column}.contact-layout{grid-template-columns:1fr}.contact-section .contact-channels{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:24px}.contact-group+.contact-group{margin-top:0}}
+@media(max-width:600px){.fiverr-cta{padding:22px}.fiverr-cta>.button{width:100%;gap:10px;padding-inline:16px}.work-principles-grid,.workflow-steps{grid-template-columns:1fr;gap:26px}.work-principles,.workflow{margin-top:36px}.contact-section .contact-channels{grid-template-columns:1fr}.contact-card{gap:10px}.contact-state{font-size:11px}.service-delivery p{font-size:14px}.availability{line-height:1.7}}

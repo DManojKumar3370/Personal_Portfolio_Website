@@ -1,8 +1,8 @@
 import { ChartNoAxesCombined, Search, CodeXml, Braces, Table2 } from 'lucide-react';
 
 const categories = [
-  { title: 'Business Intelligence', icon: ChartNoAxesCombined, skills: ['Power BI', 'Tableau', 'Power Query', 'DAX', 'Dashboard Design', 'KPI Analysis'] },
-  { title: 'Data Analysis', icon: Search, skills: ['Data Analysis', 'Data Cleaning', 'Exploratory Data Analysis', 'Data Visualization', 'Statistical Analysis'] },
+  { title: 'Business Intelligence', icon: ChartNoAxesCombined, skills: ['Power BI', 'Tableau', 'Power Query', 'DAX', 'Dashboard Design'] },
+  { title: 'Data Analysis', icon: Search, skills: ['Data Analysis', 'Data Cleaning', 'Exploratory Data Analysis', 'Data Visualization', 'KPI Analysis', 'Statistical Analysis'] },
   { title: 'Programming', icon: CodeXml, skills: ['Python', 'SQL'] },
   { title: 'Python Libraries', icon: Braces, skills: ['Pandas', 'NumPy', 'Matplotlib', 'Seaborn'] },
   { title: 'Data Tools', icon: Table2, skills: ['Microsoft Excel', 'CSV Data Processing', 'Data Transformation'] },

@@ -1,14 +1,16 @@
 import { ArrowRight, ArrowUpRight, Database, SlidersHorizontal, ChartNoAxesCombined } from 'lucide-react';
+import FiverrLink from './FiverrLink.jsx';
 
 export default function Hero() {
   return <section className="hero container" id="home" aria-labelledby="hero-title">
     <div className="hero-main">
       <div className="hero-copy"><p className="eyebrow">DATA ANALYTICS & BUSINESS INTELLIGENCE</p><p className="hello">Hello, I'm</p>
-        <h1 id="hero-title">Manoj Kumar<span>.</span></h1>
+        <h1 id="hero-title">Manoj Kumar</h1>
         <p className="hero-title">Data Analyst <span>| Power BI | SQL | Python | Excel</span></p>
         <p className="hero-description">I transform raw data into clear dashboards, visualizations, and actionable insights using Power BI, Python, SQL, Excel, and Tableau.</p>
-        <div className="button-row"><a className="button" href="#projects">View Projects <ArrowRight size={18}/></a><a className="button button-secondary" href="#contact">Hire Me <ArrowUpRight size={18}/></a></div>
-        <p className="availability"><span aria-hidden="true"/>Available for freelance data analytics projects</p>
+        <div className="button-row"><a className="button" href="#projects">View My Work <ArrowRight size={18}/></a><a className="button button-secondary" href="#contact">Hire Me <ArrowUpRight size={18}/></a></div>
+        <div className="hero-fiverr"><FiverrLink/></div>
+        <p className="availability"><span aria-hidden="true"/>Available for freelance data analytics and dashboard projects.</p>
       </div>
       <aside className="hero-note" aria-label="My approach to data"><div className="note-top"><span>FROM DATA TO DECISIONS</span><span className="note-index">01 — 03</span></div><h2>A clearer view <br/>of your data.</h2>
         <div className="approach-row"><span className="approach-icon"><Database size={21}/></span><div><strong>Organize the data</strong><p>Clean, structure, and prepare.</p></div><span className="step">01</span></div>

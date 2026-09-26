@@ -28,7 +28,10 @@ The production output is `dist/`. `npm run preview` serves that output locally. 
 
 - `src/components/`: navigation, hero, projects, modal, about, skills, services, contact, and footer components.
 - `src/data/projects.js`: project descriptions, tools, features, image filenames, and optional gallery entries.
-- `src/data/contacts.js`: the shared contact configuration used by both contact cards and footer.
+- `src/data/contacts.js`: centralized `LINKS` configuration, shared by every Fiverr CTA, contact card, and footer link (`CONTACTS` remains an alias for compatibility).
+- `src/components/FiverrCTA.jsx`: the reusable freelance enquiry panel after Featured Projects and inside Contact.
+- `src/components/FiverrLink.jsx`: a validated external Fiverr link shared by the hero, service CTA, project dialogs, and enquiry panels.
+- `src/components/HowIWork.jsx` and `WhyWorkWithMe.jsx`: the four-step workflow and working principles within Services.
 - `src/styles.css`: responsive light theme, sticky navigation, keyboard focus styles, and reduced-motion support.
 - `public/assets/projects/`: original supplied project screenshots.
 - `index.html`: page title, description, Open Graph metadata, and favicon reference.
@@ -51,15 +54,17 @@ Current assets:
 - `automobile-distributions.png`: supplied automobile chart slide, used as its card preview.
 - `automobile-relationships.png`: supplied automobile chart slide, included in the detail gallery.
 
-Original images are copied without modification. CSS controls their display; detail views show the full images. The supplied Data Grouping slide was not included because its prose concerns hotels/customers rather than the automobile analysis. An empty or failed primary image displays a labeled placeholder instead of invented data.
+Original images are preserved without modification (about 663 KiB total). Images use intrinsic dimensions, responsive sizing, and asynchronous decoding. Below-fold previews and gallery images are lazy loaded; the opened dialog's primary screenshot loads immediately. Full-size originals remain accessible. The supplied Data Grouping slide was not included because its prose concerns hotels/customers rather than the automobile analysis. An empty or failed primary image displays a labeled placeholder instead of invented data.
 
 ## Update contact links
 
-Edit `CONTACTS` near the top of `src/data/contacts.js`. Replace all four `YOUR_...` values with your real email address and HTTPS LinkedIn, GitHub, and Fiverr profile URLs. Use an email address without `mailto:`. The helper adds it automatically. Empty, placeholder, or invalid values remain inactive and display “Add link”. No requests are sent to a form provider.
+Edit `LINKS` near the top of `src/data/contacts.js` to update the email address, phone number, and HTTPS LinkedIn, GitHub, and Fiverr URLs. `LINKS.fiverr` already contains the supplied real URL, `https://www.fiverr.com/s/Emg4NYY`; every Fiverr CTA uses it. Use an email without `mailto:` and a phone number with its international country code; the helper generates `mailto:` and `tel:` links automatically. Empty values, `#`, placeholder strings, and invalid URLs are never active links. Missing Fiverr links hide both the button and enquiry panel. No requests are sent to a form provider.
+
+Freelance CTAs point to Fiverr. LinkedIn/GitHub are labeled for professional networking, while email and phone remain available for recruiter/general enquiries. No pricing, payment details, seller badges, ratings, or testimonials are invented. The optional `resume` value is empty because no resume file was supplied; there is no download button. When a real resume is available, add its asset and wire a validated download link before showing that button.
 
 ## Add future projects
 
-Add an object to the exported `projects` array in `src/data/projects.js`, following an existing entry. Provide a unique `id`, `number`, `title`, `category`, `tools`, `description`, `objective`, `analyzed`, `features`, and `image`. Add `role` for collaborative work. An optional `gallery` array accepts `{ image, caption }` objects. Keep `featured: true` on the primary sales project. The grid and modal render entries automatically.
+Add an object to the exported `projects` array in `src/data/projects.js`, following an existing entry. Provide a unique `id`, `number`, `title`, `category`, `tools`, `description`, `overview`, `objective`, `workedOn`, `analyzed`, `features`, `image`, `imageWidth`, and `imageHeight`. Add `role` for collaborative work. An optional `gallery` array accepts `{ image, width, height, caption }` objects. Keep `featured: true` on the primary sales project. The grid and modal render entries automatically.
 
 ## Deploy to Vercel
 
@@ -75,4 +80,4 @@ Push the project to a GitHub repository. In Settings → Pages, select GitHub Ac
 
 ## Before sharing publicly
 
-Replace contact placeholders and review your project descriptions and screenshots. The site displays screenshots; it does not embed interactive Power BI/Tableau dashboards or invent live project URLs. Add `og:url` and a canonical URL in `index.html` after choosing your public domain. A social preview image is intentionally omitted until one is supplied.
+Review your contact links, project descriptions, and screenshots. The site displays screenshots; it does not embed interactive Power BI/Tableau dashboards or invent live project URLs. `og:url` and the canonical URL in `index.html` point to the existing Vercel deployment. Update them if the domain changes. A social preview image is intentionally omitted until one is supplied.
