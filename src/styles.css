@@ -11,3 +11,18 @@
 @media(max-width:1100px){.hero-main{grid-template-columns:1.2fr 1fr}.hero-note{padding-inline:20px}.note-index{display:none}.approach-row{gap:10px}.approach-row p{font-size:12px}.principles>div{gap:20px}.project-meta{font-size:12px}}
 @media(max-width:800px){.hero-main{grid-template-columns:1fr}.hero-note{max-width:550px;width:100%}.hero-title>span{display:inline}.tool-strip-label{max-width:115px}.tool-strip{gap:25px}.note-index{display:block}.hero-description{max-width:600px}.hero-note h2 br{display:none}.hero-note h2{font-size:30px}.hero-note .approach-row{padding-block:13px}.contact-layout{gap:35px}.contact-section .contact-notice{font-size:12px!important}}
 @media(max-width:600px){.hero-title>span{display:block;font-size:14px}.section-heading>p,.about-copy>p,.project-content>p,.service-card>p,.contact-section p{font-size:16px}.eyebrow{font-size:11px;letter-spacing:1px}.tool-strip-label{max-width:none;font-size:11px}.project-content,.featured-card .project-content{padding:22px}.tags>span{font-size:12px}.project-meta{font-size:12px}.project-content h3,.featured-card h3{font-size:23px}.principles>div{grid-template-columns:1fr}.principles p{font-size:14px}.education>div{min-width:0;flex:1}.education strong{font-size:13px}.education>div>span{font-size:12px}.graduation{font-size:11px}.footer p{font-size:12px}.note-top{font-size:10px}.approach-row p{font-size:12px}.availability{font-size:12px}.contact-section h2{font-size:38px}.project-dialog .dialog-top .eyebrow{font-size:11px}.feature-list>li{font-size:14px}}
+
+.contact-details {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
+  gap: 5px;
+}
+.contact-value {
+  color: #c1ccdc;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
